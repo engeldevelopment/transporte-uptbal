@@ -9,12 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Configurar python
       - uses: actions/setup-python@v2
+      - name: Configurar python
         with:
           python-version: 3.7
       - name: Instalación de dependencias
         run: pip install -r requirements/dev.txt
       - name: Ejecución de pruebas unitarias
-        run: |
-          python -m unittest discover -v
+        run: python -m unittest discover -v
