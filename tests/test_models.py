@@ -7,7 +7,7 @@ from models import ColaDeEspera, Estudiante
 class ColaTest(unittest.TestCase):
 
 	def setUp(self):
-		self.cola =  ColaDeEspera()
+		self.cola = ColaDeEspera()
 		self.engel = Estudiante(nombre="Engel", apellido="Pinto") 
 	
 	def test_la_cola_empienza_vacia(self):
@@ -39,4 +39,5 @@ class ColaTest(unittest.TestCase):
 		
 		self.cola.add(self.engel)
 
-		self.assertRaises(EstudianteAgregadoError, self.cola.add, self.engel)
+		with self.assertRaises(EstudianteAgregadoError):
+			self.cola.add(self.engel)
