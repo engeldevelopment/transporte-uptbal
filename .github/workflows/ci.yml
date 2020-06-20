@@ -2,9 +2,9 @@ name: Integración continua
 
 on: 
   push:
-    brances: [ * ]
+    branches: [ * ]
   pull_request:
-    brances:
+    branches:
       - master
       - tags
 
