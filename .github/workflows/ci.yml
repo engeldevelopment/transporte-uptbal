@@ -1,0 +1,24 @@
+name: Integración continua
+
+on: 
+  push:
+    brances: [ * ]
+  pull_request:
+    brances:
+      - master
+      - tags
+
+jobs:
+  unitest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configurar python
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Instalación de dependencias
+        run: pip install -r requirements/dev.txt
+      - name: Ejecución de pruebas unitarias
+        run: |
+          python -m unittest discover -v
