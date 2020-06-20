@@ -1,6 +1,6 @@
 from collections import deque
-from exceptions import ColaVaciaError, EstudianteAgregadoError
-from exceptions import EstudianteError
+from .exceptions import ColaVaciaError, EstudianteAgregadoError
+from .exceptions import EstudianteError
 
 
 class ColaDeEspera:

@@ -1,6 +1,6 @@
 from behave import given, when, then
-from exceptions import EstudianteError, EstudianteAgregadoError
-from models import Estudiante, ColaDeEspera
+from transporte.exceptions import EstudianteError, EstudianteAgregadoError
+from transporte.models import Estudiante, ColaDeEspera
 
 
 @given('que comenzé a recoger los carnets')
