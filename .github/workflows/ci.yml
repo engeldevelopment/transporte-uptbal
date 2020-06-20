@@ -1,12 +1,8 @@
 name: Integración continua
 
-on: 
-  push:
-    branches: [ * ]
-  pull_request:
-    branches:
-      - master
-      - tags
+on:
+  - push
+  - pull_request
 
 jobs:
   unitest:
