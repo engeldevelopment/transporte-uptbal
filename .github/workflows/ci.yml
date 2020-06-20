@@ -9,12 +9,11 @@ jobs:
     name: Pruebas unitarias
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
        
       - name: SetUp python
         uses: actions/setup-python@v2
-       
-      - name: Configurar python
         with:
           python-version: 3.7
     
