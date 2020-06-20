@@ -9,8 +9,7 @@ jobs:
     name: Pruebas unitarias
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
        
       - name: SetUp python
         uses: actions/setup-python@v2
