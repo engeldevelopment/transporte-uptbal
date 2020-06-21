@@ -10,10 +10,6 @@ def version():
 	return os.environ.get('GITHUB_ACTION', '1.0.0')
 
 
-def url():
-    return "https:/github.com/{0}".format(os.environ.get("GITHUB_REPOSITORY"))
-
-
 setup(
 	name='transporte-uptbal',
 	author='Engel J. Pinto R.',
@@ -21,5 +17,5 @@ setup(
 	description='Una prueba con github actions',
 	version=version(),
 	packages=['transporte'],
-	url=url()
+	url="https://github.com/engeldevelopment/transporte-uptbal/"
 )
