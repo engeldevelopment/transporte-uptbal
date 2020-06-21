@@ -15,7 +15,7 @@ jobs:
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYTEST_API_TOKEN }}
-
+        TWINE_REPOSITORY_URL: ${{ secrets.PYPI_REPOSITORY_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2  
@@ -24,4 +24,4 @@ jobs:
       - name: Contruir paquete
         run: python setup.py sdist
       - name: Desplegar el paquete a PyPITest
-        run: twine upload --repository-url PYPI_REPOSITORY_URL dist/*
+        run: twine upload dist/*
