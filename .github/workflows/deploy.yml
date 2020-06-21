@@ -23,6 +23,8 @@ jobs:
         run: pip install twine
       - name: Generar versión del paquete
         uses: einaregilsson/build-number@v2
+        with:
+          token: ${{ secrets.github_token }}
       - name: Contruir paquete
         run: python setup.py sdist
       - name: Desplegar el paquete a PyPITest
