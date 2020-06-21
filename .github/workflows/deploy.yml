@@ -8,17 +8,18 @@ on:
 jobs:
 
   deploy_to_staging:
-      name: Despliegue a PyPITest
-      container:
-        image: python:3.7
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYTEST_API_TOKEN }}
+    runs-on: ubuntu-latest
+    name: Despliegue a PyPITest
+    container:
+      image: python:3.7
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYTEST_API_TOKEN }}
 
-      steps:  
-        - name: Instalar dependencias
-          run: pip install twine
-        - name: Contruir paquete
-          run: python setup.py sdist
-        - name: Desplegar el paquete a PyPITest
-          run: twine upload --repository-url PYPI_REPOSITORY_URL dist/*
+    steps:  
+      - name: Instalar dependencias
+        run: pip install twine
+      - name: Contruir paquete
+        run: python setup.py sdist
+      - name: Desplegar el paquete a PyPITest
+        run: twine upload --repository-url PYPI_REPOSITORY_URL dist/*
