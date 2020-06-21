@@ -7,8 +7,7 @@ from setuptools import setup
 def version():
 	if os.environ.get('GITHUB_ACTION'):
 		return os.environ.get('GITHUB_ACTION')
-	random.seed(time.time())
-	return random.random()
+	return random.random() * 100
 
 
 def url():
