@@ -5,9 +5,9 @@ from setuptools import setup
 
 
 def version():
-	if os.environ.get('GITHUB_ACTION'):
-		return os.environ.get('GITHUB_ACTION')
-	return random.random() * 100
+	if os.environ.get('BUILD_NUMBER'):
+		return os.environ.get('BUILD_NUMBER')
+	return os.environ.get('GITHUB_ACTION', '1.0.0')
 
 
 def url():
