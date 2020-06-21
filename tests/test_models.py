@@ -1,7 +1,7 @@
 import unittest
-from exceptions import ColaVaciaError, EstudianteAgregadoError
-from exceptions import EstudianteError
-from models import ColaDeEspera, Estudiante
+from transporte.exceptions import ColaVaciaError, EstudianteAgregadoError
+from transporte.exceptions import EstudianteError
+from transporte.models import ColaDeEspera, Estudiante
 
 
 class ColaTest(unittest.TestCase):
