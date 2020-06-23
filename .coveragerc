@@ -1,0 +1,8 @@
+[run]
+source = transporte
+
+[report]
+omit =
+ */__init__.py
+ */tests/*
+ */setup.py

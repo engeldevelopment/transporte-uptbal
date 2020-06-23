@@ -20,8 +20,17 @@ jobs:
       - name: Instalación de dependencias
         run: pip install -r requirements/dev.txt
     
-      - name: Ejecución de pruebas unitarias
-        run: make test
+      - name: Ejecución de pruebas unitarias y covertura
+        run: make coverage
 
       - name: Verificando calidad de código
         run: make check_qc
+
+      - name: Generar reporte de covertura
+        run: make coverage_report
+      
+      - name: Agregando action para subir el artefacto
+        uses: actions/upload-artifact@v2
+        with:
+          name: reporte-de-coverage
+          path: htmlcov/
