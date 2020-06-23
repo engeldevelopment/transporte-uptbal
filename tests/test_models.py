@@ -1,4 +1,5 @@
 import unittest
+
 from transporte.exceptions import ColaVaciaError, EstudianteAgregadoError
 from transporte.exceptions import EstudianteError
 from transporte.models import ColaDeEspera, Estudiante
@@ -8,8 +9,8 @@ class ColaTest(unittest.TestCase):
 
 	def setUp(self):
 		self.cola = ColaDeEspera()
-		self.engel = Estudiante(nombre="Engel", apellido="Pinto") 
-	
+		self.engel = Estudiante(nombre="Engel", apellido="Pinto")
+
 	def test_la_cola_empienza_vacia(self):
 
 		self.assertTrue(self.cola.esta_vacia())
@@ -36,7 +37,7 @@ class ColaTest(unittest.TestCase):
 		self.assertRaises(ColaVaciaError, self.cola.primero)
 
 	def test_da_error_intentar_agregar_un_estudiante_mas_de_una_vez(self):
-		
+
 		self.cola.add(self.engel)
 
 		with self.assertRaises(EstudianteAgregadoError):

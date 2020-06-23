@@ -1,6 +1,6 @@
 class ColaVaciaError(IndexError):
 	pass
-	
+
 
 class EstudianteError(Exception):
 	pass
