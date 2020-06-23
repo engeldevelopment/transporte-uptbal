@@ -18,16 +18,34 @@ jobs:
           python-version: 3.7
     
       - name: Instalación de dependencias
-        run: pip install -r requirements/dev.txt
+        run: pip install -r requirements/ci.txt
     
-      - name: Ejecución de pruebas unitarias y covertura
-        run: make coverage
+      - name: Ejecución de pruebas unitarias
+        run: make test
 
+  quality_code:
+    name: Calidad de código y report de coverage
+    needs: unittest
+    runs-on: ubuntu-latest
+    steps:
+      
+      - uses: actions/checkout@v2
+      
+      - name: SetUp python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      
+      - name: Instalación de dependencias
+        run: pip install -r requirements/ci.txt
+      
       - name: Verificando calidad de código
         run: make check_qc
 
       - name: Generar reporte de covertura
-        run: make coverage_report
+        run: |
+          make coverage
+          make coverage_report
       
       - name: Agregando action para subir el artefacto
         uses: actions/upload-artifact@v2
